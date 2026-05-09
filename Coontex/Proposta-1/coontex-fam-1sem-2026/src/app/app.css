@@ -1,0 +1,19 @@
+/* dashboard-layout.css */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8f9fc;
+}
+
+.page-content {
+  padding: 24px;
+}

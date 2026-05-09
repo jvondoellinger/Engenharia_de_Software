@@ -1,0 +1,22 @@
+/* dashboard-cards.css */
+
+.cards-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 3fr));
+
+  gap: 24px;
+
+  margin-top: 24px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px) {
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

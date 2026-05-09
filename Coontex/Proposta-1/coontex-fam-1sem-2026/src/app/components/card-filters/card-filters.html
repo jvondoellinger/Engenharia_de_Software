@@ -1,0 +1,146 @@
+<!-- filter-bar.html -->
+
+<div class="filter-bar">
+
+  <!-- Header -->
+  <div class="filter-header">
+
+    <div class="d-flex align-items-center gap-2">
+
+      <i class="bi bi-sliders"></i>
+
+      <span class="fw-semibold">
+        Filtros
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- Filters -->
+  <div class="filters-grid">
+
+    <!-- Ano -->
+    <div class="filter-group">
+
+      <label>
+        Ano letivo
+      </label>
+
+      <select
+        class="form-select"
+        [(ngModel)]="year">
+
+        @for (year of schoolYears; track year) {
+          <option>{{ year }}</option>
+        }
+
+      </select>
+
+    </div>
+
+    <!-- Escola -->
+    <div class="filter-group">
+
+      <label>
+        Escola
+      </label>
+
+      <select
+        class="form-select"
+        [(ngModel)]="school">
+
+        @for (school of schools(); track school) {
+          <option> {{ school }} </option>
+        }
+
+      </select>
+
+    </div>
+
+    <!-- Etapa -->
+    <div class="filter-group">
+
+      <label>
+        Etapa de ensino
+      </label>
+
+      <select
+        class="form-select"
+        [(ngModel)]="stage">
+
+        @for (stage of teachingStage(); track stage) {
+          <option> {{ stage }}</option>
+        }
+
+      </select>
+
+    </div>
+
+    <!-- Professor -->
+    <div class="filter-group">
+
+      <label>
+        Professor(a)
+      </label>
+
+      <select
+        class="form-select"
+        [(ngModel)]="teacher">
+
+        @for (teacher of teachers(); track teacher) {
+          <option> {{ teacher }}</option>
+        }
+
+      </select>
+
+    </div>
+
+    <!-- Situação -->
+    <div class="filter-group">
+
+      <label>
+        Situação da turma
+      </label>
+
+      <select
+        class="form-select"
+        [(ngModel)]="status">
+
+        <option>Todas</option>
+        <option>Bom</option>
+        <option>Regular</option>
+        <option>Atenção</option>
+
+      </select>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="filter-actions">
+
+      <button
+        class="btn-clear"
+        (click)="clearFilters()">
+
+        <i class="bi bi-arrow-clockwise"></i>
+
+        Limpar filtros
+
+      </button>
+
+      <button
+        class="btn-apply"
+        (click)="applyFilters()">
+
+        <i class="bi bi-funnel"></i>
+
+        Aplicar filtros
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,136 @@
+<!-- classroom-card.html -->
+
+<div class="classroom-card">
+
+  <!-- HEADER -->
+  <div class="card-header-custom">
+
+    <div class="d-flex gap-3">
+
+      <div class="icon-box">
+        <i class="bi bi-people"></i>
+      </div>
+
+      <div>
+
+        <h4>
+          {{ title }}
+        </h4>
+
+        <small>
+          Ensino Fundamental
+        </small>
+
+        <div class="students">
+
+          <i class="bi bi-person"></i>
+
+          {{ students }} alunos
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="menu-btn">
+      <i class="bi bi-three-dots-vertical"></i>
+    </button>
+
+  </div>
+
+  <!-- BODY -->
+  <div class="card-body-custom">
+
+    <span class="section-title">
+      Desempenho geral
+    </span>
+
+    <div class="performance-wrapper">
+
+      <!-- CIRCLE -->
+      <div
+        class="progress-circle"
+        [style.--progress]="performance + '%'"
+        [style.--color]="color">
+
+        <div class="progress-inner">
+          {{ performance }}%
+        </div>
+
+      </div>
+
+      <!-- INFO -->
+      <div class="performance-info">
+
+        <h5 [style.color]="color">
+          {{ status }}
+        </h5>
+
+        <span>
+
+          Evolução:
+
+          <strong
+            [class.positive]="evolution >= 0"
+            [class.negative]="evolution < 0">
+
+            <i
+              class="bi"
+              [class.bi-arrow-up]="evolution >= 0"
+              [class.bi-arrow-down]="evolution < 0">
+            </i>
+
+            {{ evolution }}%
+
+          </strong>
+
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="metrics">
+
+      <div class="metric">
+
+        <i class="bi bi-clipboard"></i>
+
+        <div>
+          <small>Avaliações</small>
+          <strong>{{ evaluations }}</strong>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="metric">
+
+        <i class="bi bi-bell"></i>
+
+        <div>
+          <small>Alertas</small>
+          <strong class="alert-color">
+            {{ alerts }}
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ACTION -->
+  <button class="details-btn">
+
+    Ver detalhes
+
+    <i class="bi bi-arrow-right"></i>
+
+  </button>
+
+</div>

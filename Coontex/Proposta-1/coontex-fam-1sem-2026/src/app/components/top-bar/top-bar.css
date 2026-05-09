@@ -1,0 +1,30 @@
+/* topbar.css */
+
+.topbar {
+  background: #f8f9fc;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.search-box {
+  width: 360px;
+  height: 52px;
+
+  background: white;
+
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+
+  gap: 10px;
+}
+
+.search-box input {
+  background: transparent;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}

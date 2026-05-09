@@ -1,0 +1,136 @@
+<!-- sidebar.html -->
+
+<div
+  class="sidebar d-flex flex-column justify-content-between"
+  [class.collapsed]="collapsed">
+
+  <div>
+
+    <!-- Logo -->
+    <div class="logo px-4 py-4">
+
+      @if (!collapsed) {
+        <div>
+          <h4 class="m-0 fw-bold text-white">
+            EduMétrica
+          </h4>
+
+          <small class="text-light opacity-75">
+            Desempenho Escolar
+          </small>
+        </div>
+      }
+
+    </div>
+
+    <!-- Menu -->
+    <div class="menu-container">
+
+      <a class="menu-item active-link" href="#">
+      <i class="bi bi-house"></i>
+
+        @if (!collapsed) {
+          <span>Início</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-people"></i>
+
+        @if (!collapsed) {
+          <span>Turmas</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-bar-chart"></i>
+
+        @if (!collapsed) {
+          <span>Desempenho</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-clipboard"></i>
+
+        @if (!collapsed) {
+          <span>Avaliações</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-file-earmark-text"></i>
+
+        @if (!collapsed) {
+          <span>Relatórios</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-bullseye"></i>
+
+        @if (!collapsed) {
+          <span>Metas</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-bell"></i>
+
+        @if (!collapsed) {
+          <span>Alertas</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-calendar"></i>
+
+        @if (!collapsed) {
+          <span>Calendário</span>
+        }
+      </a>
+
+      <a class="menu-item" href="#">
+        <i class="bi bi-gear"></i>
+
+        @if (!collapsed) {
+          <span>Configurações</span>
+        }
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom-menu pb-4">
+
+    <a class="menu-item" href="#">
+
+      <i class="bi bi-question-circle"></i>
+
+      @if (!collapsed) {
+        <span>Ajuda</span>
+      }
+
+    </a>
+
+    <button
+      class="menu-item toggle-btn"
+      (click)="toggle()">
+
+      <i
+        class="bi"
+        [class.bi-chevron-left]="!collapsed"
+        [class.bi-chevron-right]="collapsed">
+      </i>
+
+      @if (!collapsed) {
+        <span>Recolher menu</span>
+      }
+
+    </button>
+
+  </div>
+
+</div>
