@@ -50,7 +50,7 @@
         class="form-select"
         [(ngModel)]="school">
 
-        @for (school of schools(); track school) {
+        @for (school of schools; track school) {
           <option> {{ school }} </option>
         }
 
@@ -69,7 +69,7 @@
         class="form-select"
         [(ngModel)]="stage">
 
-        @for (stage of teachingStage(); track stage) {
+        @for (stage of teachingStage; track stage) {
           <option> {{ stage }}</option>
         }
 
@@ -88,7 +88,7 @@
         class="form-select"
         [(ngModel)]="teacher">
 
-        @for (teacher of teachers(); track teacher) {
+        @for (teacher of teachers; track teacher) {
           <option> {{ teacher }}</option>
         }
 

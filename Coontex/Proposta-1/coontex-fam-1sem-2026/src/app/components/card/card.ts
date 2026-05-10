@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CardBase } from '../../models/CardModels';
 
 @Component({
   selector: 'app-card',
@@ -9,22 +9,24 @@ import { DecimalPipe } from '@angular/common';
 })
 export class Card {
   @Input({ required: true })
+  public card!: CardBase;
+  /*@Input({ required: true })
   public title!: string;
 
   @Input({ required: true })
   public students!: number;
 
-  /**
+  /!**
    * Média atual da turma
    * Ex: 7.6
-   */
+   *!/
   @Input({ required: true })
   public currentAverage!: number;
 
-  /**
+  /!**
    * Média anterior
    * Ex: 7.0
-   */
+   *!/
   @Input({ required: true })
   public previousAverage!: number;
 
@@ -32,25 +34,23 @@ export class Card {
   public evaluations!: number;
 
   @Input({ required: true })
-  public alerts!: number;
+  public alerts!: number;*/
 
-  /*
-   * PERFORMANCE %
-   */
+  @Output()
+  public detailsClicked = new EventEmitter<void>();
+
+  protected onDetailsClick(): void {
+    this.detailsClicked.emit();
+  }
+
   protected get performance(): number {
-    return Math.round((this.currentAverage / 10) * 100);
+    return Math.round((this.card.currentAverage / 10) * 100);
   }
 
-  /*
-   * EVOLUÇÃO %
-   */
   protected get evolution(): number {
-    return Math.round(((this.currentAverage - this.previousAverage) / this.previousAverage) * 100);
+    return Math.round(((this.card.currentAverage - this.card.previousAverage) / this.card.previousAverage) * 100);
   }
 
-  /*
-   * STATUS
-   */
   protected get status(): string {
     if (this.performance >= 75) return 'Bom';
 
@@ -59,9 +59,6 @@ export class Card {
     return 'Atenção';
   }
 
-  /*
-   * COR
-   */
   protected get color(): string {
     if (this.performance >= 75) return '#1456ff';
 

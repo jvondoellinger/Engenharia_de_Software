@@ -1,0 +1,115 @@
+.students-table-container {
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.table-subtitle {
+  margin: 0;
+  color: #6c757d;
+}
+
+.summary-badge {
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: #f1f3f5;
+  font-weight: 600;
+}
+
+.performance-table {
+  margin: 0;
+}
+
+.performance-table thead th {
+  border: none;
+  padding-bottom: 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.performance-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.performance-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.performance-table td {
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+  border-color: #f1f3f5;
+}
+
+.student-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.student-avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-weight: 700;
+
+  background: #e9ecef;
+}
+
+.student-name {
+  font-weight: 600;
+}
+
+.average-current {
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status-excellent {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-good {
+  background: #cff4fc;
+  color: #055160;
+}
+
+.status-warning {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.status-critical {
+  background: #f8d7da;
+  color: #842029;
+}

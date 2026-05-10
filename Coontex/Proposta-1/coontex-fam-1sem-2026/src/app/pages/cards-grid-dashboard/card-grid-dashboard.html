@@ -1,0 +1,29 @@
+<div class="cards-dashboard">
+  <app-card-filters
+    [schools]="schools()"
+    [schoolYears]="stringDates()"
+    [teachers]="teachers()"
+    [teachingStage]="teachingStage()">
+  </app-card-filters>
+
+  @if (!showingClasses) {
+    <div class="back-container">
+      <button class="back-btn" (click)="onBackButtonClicked()">
+        <i class="bi bi-arrow-left"></i>
+        Voltar
+      </button>
+    </div>
+  }
+
+  <div class="cards-grid">
+
+    @for (card of cards; track card.title) {
+      <app-card
+        [card]="card"
+        (detailsClicked)="onCardClicked(card)">
+      </app-card>
+    }
+
+  </div>
+
+</div>

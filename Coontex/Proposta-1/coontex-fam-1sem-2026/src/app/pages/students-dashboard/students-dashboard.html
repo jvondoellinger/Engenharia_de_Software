@@ -1,0 +1,115 @@
+<div class="students-table-container">
+
+  <div class="table-header">
+
+    <div>
+      <h3 class="table-title">
+        {{ courseName }}
+      </h3>
+
+      <p class="table-subtitle">
+        Monitoramento de desempenho acadêmico
+      </p>
+    </div>
+
+    <div class="summary-badge">
+      {{ students.length }} alunos
+    </div>
+
+  </div>
+
+  <div class="table-responsive">
+
+    <table class="table align-middle performance-table">
+
+      <thead>
+      <tr>
+        <th>Aluno</th>
+        <th>Frequência</th>
+        <th>Média Atual</th>
+        <th>Média Anterior</th>
+        <th>Avaliações</th>
+        <th>Alertas</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+        @for (student of students; track student.id) {
+
+          <tr>
+
+            <td>
+              <div class="student-cell">
+                <div class="student-avatar">
+                  {{ student.name.charAt(0) }}
+                </div>
+
+                <div>
+                  <div class="student-name">
+                    {{ student.name }}
+                  </div>
+
+                  <small class="text-secondary">
+                    ID: {{ student.id.slice(0, 8) }}
+                  </small>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <span class="fw-semibold">
+                {{ student.attendance }}%
+              </span>
+            </td>
+
+            <td>
+              <span class="average-current">
+                {{ student.currentAverage }}
+              </span>
+            </td>
+
+            <td>
+              {{ student.previousAverage }}
+            </td>
+
+            <td>
+              {{ student.evaluations }}
+            </td>
+
+            <td>
+
+              @if (student.alerts > 0) {
+                <span class="badge text-bg-danger">
+                  {{ student.alerts }}
+                </span>
+              } @else {
+                <span class="badge text-bg-success">
+                  0
+                </span>
+              }
+
+            </td>
+
+            <td>
+              <span
+                class="status-badge"
+                [class]="getStatusClass(student.status)">
+
+                {{ student.status }}
+
+              </span>
+            </td>
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
